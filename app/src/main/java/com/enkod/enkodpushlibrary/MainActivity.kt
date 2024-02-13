@@ -3,7 +3,7 @@ package com.enkod.enkodpushlibrary
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.jetpack_new.databinding.ActivityMainBinding
+import com.enkod.enkodpushlibrary.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
