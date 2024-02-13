@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.enkod.enkodpushlibrary"
+    namespace = "com.example.jetpack_new"
     compileSdk = 34
 
     defaultConfig {
@@ -71,7 +71,7 @@ publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.github.AndreyWeather"
-            artifactId = "enkodpushlibrary"
+            artifactId = "jetpack-new"
             version = "0.0.1"
 
             afterEvaluate {
