@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "com.enkod.enkodpushlibrary"
+rootProject.name = "enkodpushlibrary"
 include(":app")
 include(":epl")

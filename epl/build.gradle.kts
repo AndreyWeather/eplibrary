@@ -71,7 +71,7 @@ publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.github.AndreyWeather"
-            artifactId = "com.enkod.enkodpushlibrary"
+            artifactId = "enkodpushlibrary"
             version = "0.0.1"
 
             afterEvaluate {
