@@ -1,4 +1,4 @@
-package com.example.jetpack_new
+package com.enkod.enkodpushlibrary
 
 import org.junit.Test
 

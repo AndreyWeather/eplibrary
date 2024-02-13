@@ -1,11 +1,8 @@
-package com.example.jetpack_new
+package com.enkod.enkodpushlibrary
 
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.enkod.enkodpushlibrary.EnkodConnect
-import com.enkod.enkodpushlibrary.EnkodPushLibrary
-import com.enkod.enkodpushlibrary.Product
 import com.example.jetpack_new.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

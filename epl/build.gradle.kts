@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.jetpack_new"
+    namespace = "com.enkod.enkodpushlibrary"
     compileSdk = 34
 
     defaultConfig {
@@ -43,8 +43,6 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     implementation ("com.google.firebase:firebase-messaging:23.3.0")
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
     implementation("com.google.android.material:material:1.5.0-alpha02")
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
@@ -73,7 +71,7 @@ publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.github.AndreyWeather"
-            artifactId = "jetpack-new"
+            artifactId = "enkodpushlibrary"
             version = "0.0.1"
 
             afterEvaluate {

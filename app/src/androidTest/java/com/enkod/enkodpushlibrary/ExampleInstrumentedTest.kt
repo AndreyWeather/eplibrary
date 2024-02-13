@@ -1,4 +1,4 @@
-package com.example.jetpack_new
+package com.enkod.enkodpushlibrary
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

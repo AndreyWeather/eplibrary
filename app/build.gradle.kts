@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.jetpack_new"
+    namespace = "com.enkod.enkodpushlibrary"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.jetpack_new"
+        applicationId = "com.enkod.enkodpushlibrary"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
