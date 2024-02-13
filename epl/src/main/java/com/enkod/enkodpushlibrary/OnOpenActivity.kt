@@ -22,7 +22,9 @@ class OnOpenActivity : AppCompatActivity() {
         intent?.apply {
             val bundle = getIntent().extras
             if (bundle != null) {
-                Log.i("handleExtras", "${intent.getStringExtra(EnkodPushLibrary.intentName)} $${intent.getStringExtra(EnkodPushLibrary.url)}")
+                Log.i("handleExtras", "${intent.getStringExtra(EnkodPushLibrary.intentName)} $${intent.getStringExtra(
+                    EnkodPushLibrary.url
+                )}")
                 EnkodPushLibrary.handleExtras(this@OnOpenActivity, bundle)
 
             }

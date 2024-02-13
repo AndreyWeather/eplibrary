@@ -1,5 +1,11 @@
 package com.enkod.enkodpushlibrary
 
+import com.example.jetpack_new.GetTokenResponse
+import com.example.jetpack_new.PageUrl
+import com.example.jetpack_new.PushClickBody
+import com.example.jetpack_new.SessionIdResponse
+import com.example.jetpack_new.SubscribeBody
+import com.example.jetpack_new.UpdateTokenResponse
 import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.http.*
@@ -72,7 +78,8 @@ interface Api {
     @POST("/mobile/page/open")
     fun pageOpen(@Header("X-Account")client:String,
                        @Header("X-Session-Id")session:String,
-                       @Body body:PageUrl)
+                       @Body body: PageUrl
+    )
     : Call<Unit>
 
     @POST("/mobile/product/open")

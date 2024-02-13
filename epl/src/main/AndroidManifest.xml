@@ -59,7 +59,7 @@
         </activity>
 
         <service
-            android:name="com.enkod.enkodpushlibrary.EnkodPushMessagingService"
+            android:name="com.example.jetpack_new.EnkodPushMessagingService"
             android:directBootAware="true"
             android:enabled="true"
             android:exported="true"

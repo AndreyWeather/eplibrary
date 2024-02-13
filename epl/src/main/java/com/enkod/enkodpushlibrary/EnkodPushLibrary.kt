@@ -27,12 +27,20 @@ import androidx.work.WorkManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders
+import com.example.jetpack_new.Order
+import com.example.jetpack_new.Product
+import com.example.jetpack_new.PushClickBody
+import com.example.jetpack_new.SessionIdResponse
+import com.example.jetpack_new.SubscribeBody
+import com.example.jetpack_new.UpdateTokenResponse
+import com.example.jetpack_new.isAppInforegrounded
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.RemoteMessage
 import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
+import epl.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -153,9 +161,9 @@ object EnkodPushLibrary {
         var preferencesToken = preferences.getString(TOKEN_TAG, null)
 
 
-        this.sessionId = preferencesSessionId
-        this.token = preferencesToken
-        this.account = preferencesAcc
+        sessionId = preferencesSessionId
+        token = preferencesToken
+        account = preferencesAcc
 
     }
 
@@ -209,21 +217,21 @@ object EnkodPushLibrary {
             else -> {
 
 
-                if (this.token == token && !sessionId.isNullOrEmpty()) {
+                if (EnkodPushLibrary.token == token && !sessionId.isNullOrEmpty()) {
 
                     Log.d("lib_lvl", "start_session_fb_true")
                     startSession()
                 }
 
-                if (this.token != token) {
+                if (EnkodPushLibrary.token != token) {
 
                     val preferences = context.getSharedPreferences(TAG, Context.MODE_PRIVATE)
                     preferences.edit()
                         .putString(TOKEN_TAG, token)
                         .apply()
-                    this.token = token
+                    EnkodPushLibrary.token = token
 
-                    Log.d("lib_lvl", this.token.toString())
+                    Log.d("lib_lvl", EnkodPushLibrary.token.toString())
 
 
                     if (!sessionId.isNullOrEmpty()) {
@@ -286,9 +294,9 @@ object EnkodPushLibrary {
             .putString(SESSION_ID_TAG, nsession)
             .apply()
 
-        this.sessionId = nsession
+        sessionId = nsession
 
-        Log.d("session", this.sessionId.toString())
+        Log.d("session", sessionId.toString())
         Log.d("new_token", newPreferencesToken.toString())
 
         if (newPreferencesToken.isNullOrEmpty()) {
@@ -329,8 +337,8 @@ object EnkodPushLibrary {
 
     private fun startSession() {
         var tokenSession = ""
-        if (!this.token.isNullOrEmpty()) {
-            tokenSession = this.token!!
+        if (!token.isNullOrEmpty()) {
+            tokenSession = token!!
         }
         Log.d("lib_lvl", "startSession")
         tokenSession?.let {
@@ -542,16 +550,16 @@ object EnkodPushLibrary {
 
 
     private fun getClientName(): String {
-        Log.d("Library", "getClientName ${this.account}")
-        return this.account!!
+        Log.d("Library", "getClientName $account")
+        return account!!
     }
 
 
     private fun getSession(): String {
 
-        return if (!this.sessionId.isNullOrEmpty()) {
+        return if (!sessionId.isNullOrEmpty()) {
             Log.d("getSession", " $sessionId")
-            this.sessionId!!
+            sessionId!!
         } else ""
 
     }
@@ -879,7 +887,7 @@ object EnkodPushLibrary {
                     bundleOf(
                         intentName to OpenIntent.DYNAMIC_LINK.get(),
                         OpenIntent.OPEN_APP.name to true,
-                        this.url to URL
+                        url to URL
                     )
                 )
             }
@@ -906,7 +914,7 @@ object EnkodPushLibrary {
                     bundleOf(
                         intentName to OpenIntent.OPEN_URL.get(),
                         OpenIntent.OPEN_APP.name to true,
-                        this.url to URL
+                        url to URL
                     )
                 )
             }
@@ -936,7 +944,7 @@ object EnkodPushLibrary {
             .putString(ACCOUNT_TAG, acc)
             .apply()
 
-        this.account = acc
+        account = acc
     }
 
 
@@ -1012,9 +1020,9 @@ object EnkodPushLibrary {
         var preferencesToken = preferences.getString(TOKEN_TAG, null)
         var preferencesMessageId = preferences.getString(MESSAGEID_TAG, null)
 
-        this.sessionId = preferencesSessionId!!
-        this.token = preferencesToken!!
-        this.account = preferencesAcc!!
+        sessionId = preferencesSessionId!!
+        token = preferencesToken!!
+        account = preferencesAcc!!
 
 
         var sessionID = ""

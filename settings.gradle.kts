@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "enkodpushlibrary"
+rootProject.name = "jetpack-new"
 include(":app")
 include(":epl")

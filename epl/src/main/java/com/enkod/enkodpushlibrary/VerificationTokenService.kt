@@ -9,6 +9,7 @@ import android.os.IBinder
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.work.WorkManager
+import com.example.jetpack_new.GetTokenResponse
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.CoroutineScope
@@ -39,7 +40,9 @@ class VerificationTokenService : Service() {
                 ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC
             )
         } else {
-            startForeground(1, EnkodPushLibrary.createdNotificationForNetworkService(applicationContext))
+            startForeground(1,
+                EnkodPushLibrary.createdNotificationForNetworkService(applicationContext)
+            )
         }
 
         CoroutineScope(Dispatchers.IO).launch {

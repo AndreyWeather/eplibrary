@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Build
 import android.os.IBinder
 import androidx.annotation.RequiresApi
-import com.enkod.enkodpushlibrary.EnkodPushLibrary
 
 class RefreshAppInMemoryService : Service() {
 
@@ -13,7 +12,9 @@ class RefreshAppInMemoryService : Service() {
     override fun onCreate() {
         super.onCreate()
 
-        startForeground(1, EnkodPushLibrary.createdNotificationForNetworkService(applicationContext))
+        startForeground(1,
+            EnkodPushLibrary.createdNotificationForNetworkService(applicationContext)
+        )
 
         stopSelf()
 

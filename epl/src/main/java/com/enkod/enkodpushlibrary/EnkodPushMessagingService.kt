@@ -1,4 +1,4 @@
-package com.enkod.enkodpushlibrary
+package com.example.jetpack_new
 
 import android.Manifest
 import android.app.ActivityManager
@@ -16,11 +16,19 @@ import androidx.core.app.NotificationManagerCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders
+import com.enkod.enkodpushlibrary.EnkodPushLibrary
 import com.enkod.enkodpushlibrary.EnkodPushLibrary.createdServiceNotification
 import com.enkod.enkodpushlibrary.EnkodPushLibrary.downloadImageToPush
 import com.enkod.enkodpushlibrary.EnkodPushLibrary.initPreferences
 import com.enkod.enkodpushlibrary.EnkodPushLibrary.initRetrofit
 import com.enkod.enkodpushlibrary.EnkodPushLibrary.processMessage
+import com.enkod.enkodpushlibrary.InternetService
+import com.enkod.enkodpushlibrary.Variables
+import com.enkod.enkodpushlibrary.addActions
+import com.enkod.enkodpushlibrary.setIcon
+import com.enkod.enkodpushlibrary.setLights
+import com.enkod.enkodpushlibrary.setSound
+import com.enkod.enkodpushlibrary.setVibrate
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import rx.Observable
